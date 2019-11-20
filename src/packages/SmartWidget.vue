@@ -99,6 +99,8 @@ export default {
     subTitle: String,
     // set `widget-body__content` padding style
     padding: { type: [Number, Array], default: () => [12, 20] },
+    // set `widget-header__title` padding style
+    titlePadding: { type: Number, default: 20 },
     // toggle widget mode
     simple: { type: Boolean, default: false },
     // toggle loading mask
@@ -156,10 +158,8 @@ export default {
       }
     },
     widgetTitleStyle () {
-      const padding = typeof (this.padding) === 'number' ? Array.of(this.padding) : this.padding
-      const offset = padding[padding.length - 1]
       return {
-        padding: `0 ${offset / 2}px 0 ${offset}px`
+        padding: `0 ${this.titlePadding}px 0 ${this.titlePadding}px`
       }
     },
     rowHeight () {
@@ -306,7 +306,6 @@ body.no-overflow {
   .widget-header {
     display: flex;
     line-height: 48px;
-    border-bottom: 1px solid #ebeef5;
     h2,
     h4 {
       display: inline-block;
