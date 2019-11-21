@@ -12,6 +12,7 @@
       @resize="resizeEvent"
       @moved="movedEvent"
       @resized="resizedEvent"
+      @container-resized="containerResizedEvent"
     >
       <slot :name="item.i"></slot>
     </grid-item>
@@ -89,6 +90,9 @@ export default {
     },
     resizedEvent (i, newH, newW, newHPx, newWPx) {
       this.$emit('layout-updated', { i, newH, newW, newHPx, newWPx })
+    },
+    containerResizedEvent (i, newH, newW, newHPx, newWPx) {
+      this.$emit('container-resized', { i, newH, newW, newHPx, newWPx })
     }
   }
 }
