@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "screenfull": "^4.2.1",
-    "vue-grid-layout": "^2.3.4"
+    "vue-grid-layout": "git+https://github.com/rokiyama/vue-grid-layout.git#ee9c1a6ca765efce2d10b71a573cd8a8136196f9"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.9.0",
